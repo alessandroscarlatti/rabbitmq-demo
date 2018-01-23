@@ -1,0 +1,17 @@
+rabbitmq:
+  northPole:
+    connection:
+      addresses: localhost #port 5672 is inferred, as the AMQP default
+      username: guest
+      password: guest
+      virtualHost: north_pole
+    publisher:
+      exchange: polar_bears_exchange
+  southPole:
+    connection:
+      addresses: localhost #port 5672 is inferred, as the AMQP default
+      username: guest
+      password: guest
+      virtualHost: south_pole
+    publisher:
+      exchange: penguins_exchange
