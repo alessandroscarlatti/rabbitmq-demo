@@ -51,7 +51,7 @@ public class TransactionalMessagePublisher implements CommandLineRunner {
     }
 
     /**
-     * Publish 5 messages, but then throw an exception.
+     * Publish five messages, but then throw an exception.
      * @param channel the channel being used for this transaction.
      * @throws Exception on any exception thrown during publish.
      */
