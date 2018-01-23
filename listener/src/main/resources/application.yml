@@ -1,0 +1,8 @@
+rabbitmq:
+  connection:
+    addresses: localhost #port 5672 is inferred, as the AMQP default
+    username: guest
+    password: guest
+    vhost: /
+  consumer:
+    queue: squawks_queue
