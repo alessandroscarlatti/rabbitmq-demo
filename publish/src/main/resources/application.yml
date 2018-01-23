@@ -1,0 +1,12 @@
+spring:
+  autoconfigure:
+    exclude: springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+
+rabbitmq:
+  connection:
+    addresses: localhost #port 5672 is inferred, as the AMQP default
+    username: guest
+    password: guest
+    virtualHost: /
+  publisher:
+    exchange: squawks_exchange
