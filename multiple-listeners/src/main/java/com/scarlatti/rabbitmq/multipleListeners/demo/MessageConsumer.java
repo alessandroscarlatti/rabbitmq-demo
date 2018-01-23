@@ -1,4 +1,4 @@
-package com.scarlatti.rabbitmq.listener.demo;
+package com.scarlatti.rabbitmq.multipleListeners.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +17,13 @@ public class MessageConsumer {
 
     private final static Logger log = LoggerFactory.getLogger(MessageConsumer.class);
 
-    @RabbitListener(queues = "${rabbitmq.consumer.queue}")
-    public void receiveMessage(byte[] bytes) {
-        log.info("received message: " + new String(bytes));
+    @RabbitListener(queues = "${rabbitmq.northPole.consumer.queue}", containerFactory = "northPoleListenerContainerFactory")
+    void receiveNorthPoleMessage(byte[] bytes) {
+        log.info("received North Pole message: " + new String(bytes));
+    }
+
+    @RabbitListener(queues = "${rabbitmq.southPole.consumer.queue}",  containerFactory = "southPoleListenerContainerFactory")
+    void receiveSouthPoleMessage(byte[] bytes) {
+        log.info("received South Pole message: " + new String(bytes));
     }
 }

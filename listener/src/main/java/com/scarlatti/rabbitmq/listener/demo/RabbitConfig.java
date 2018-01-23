@@ -19,12 +19,14 @@ public class RabbitConfig {
 
     @Bean
     @ConfigurationProperties("rabbitmq.connection")
-    ConnectionFactory connectionFactory() {
+    public ConnectionFactory connectionFactory() {
         return new CachingConnectionFactory();
     }
 
-    @Bean
-    SimpleMessageListenerContainer listenerContainer(ConnectionFactory connectionFactory) {
-        return new SimpleMessageListenerContainer(connectionFactory);
-    }
+
+//
+//    @Bean
+//    public SimpleMessageListenerContainer listenerContainer(ConnectionFactory connectionFactory) {
+//        return new SimpleMessageListenerContainer(connectionFactory);
+//    }
 }
