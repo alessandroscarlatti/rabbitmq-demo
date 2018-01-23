@@ -12,6 +12,8 @@
 //
 // This is a basic example of how to implement a Rabbit message publisher with
 // Spring Boot AMQP Java Config.
-// When you run this demo, you can publish to two distinct queues via two distinct
-// exchanges.
+// When you run this demo, you can publish five messages to a queue "squawks_queue" via
+// an exchange "squawks_exchange" (provided the exchange is bound to the queue).
+// However, on the last message, an exception is thrown in your application,
+// and you cancel the transaction.
 //////////////////////////////////////////////////////////////////////////////////////

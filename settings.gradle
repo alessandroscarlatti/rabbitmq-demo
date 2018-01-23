@@ -1,3 +1,4 @@
 include 'listener', 'multiple-listeners', 'publish'
 include 'multiple-publish'
+include 'transactional-publish'
 
