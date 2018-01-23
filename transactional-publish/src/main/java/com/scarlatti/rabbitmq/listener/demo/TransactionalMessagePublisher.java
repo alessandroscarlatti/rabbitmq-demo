@@ -39,7 +39,7 @@ public class TransactionalMessagePublisher implements CommandLineRunner {
         rabbitTemplate.execute(channel -> {
             try {
                 channel.txSelect();         // begin a transaction
-                publishMessages(channel);    // try to publish messages...
+                publishMessages(channel);   // try to publish messages...
                 channel.txCommit();         // ...would commit the transaction
             } catch (Exception e) {
                 channel.txRollback();       // rollback this commit. Like it never even happened.
