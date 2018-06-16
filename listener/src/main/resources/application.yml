@@ -6,3 +6,5 @@ rabbitmq:
     virtualHost: /
   consumer:
     queue: squawks_queue
+
+server.port: 8082

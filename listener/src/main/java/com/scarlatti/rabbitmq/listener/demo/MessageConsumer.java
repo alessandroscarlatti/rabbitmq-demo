@@ -17,7 +17,7 @@ public class MessageConsumer {
 
     private final static Logger log = LoggerFactory.getLogger(MessageConsumer.class);
 
-    @RabbitListener(queues = "${rabbitmq.consumer.queue}")
+    @RabbitListener(queues = "${rabbitmq.consumer.queue}", id = BeanNames.RabbitListener)
     public void receiveMessage(byte[] bytes) {
         log.info("received message: " + new String(bytes));
     }
